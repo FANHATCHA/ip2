@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)https://blackboard.gcal.ac.uk/bbcswebdav/pid-2619318-dt-content-rid-14000441_2/courses/M2I324185-18-C/IP2_Map1.html -->
+<html class="gr__blackboard_gcal_ac_uk"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style>.gm-err-container{height:100%;width:100%;display:table;background-color:#e0e0e0;position:relative;left:0;top:0}.gm-err-content{border-radius:1px;padding-top:0;padding-left:10%;padding-right:10%;position:static;vertical-align:middle;display:table-cell}.gm-err-content a{color:#4285f4}.gm-err-icon{text-align:center}.gm-err-title{margin:5px;margin-bottom:20px;color:#616161;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:24px}.gm-err-message{margin:5px;color:#757575;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:12px}.gm-err-autocomplete{padding-left:20px;background-repeat:no-repeat;background-size:15px 15px}
+</style><style>.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}
+</style><style>.gm-control-active>img{box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1){display:none}.gm-control-active:hover>img:nth-child(2),.gm-control-active:active>img:nth-child(3){display:block}
+</style><link type="text/css" rel="stylesheet" href="./IP2_Map1_files/css"><style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}
+</style><style>.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
+</style><style>@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style>.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style><style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+        #map {
+            height: 70%;
+            width: 70%;
+        }
+
+        /* Optional settings. Do as you wish with these*/
+
+        html,
+        body {
+            height: 96%;
+            margin: 1%;
+            padding: 0;
+        }
+
+        #other {
+            height: 30%;
+            width: 50%;
+        }
+    </style>
+    <!--We will use JQuery library (https://jquery.com/) -->
+    <script src="./IP2_Map1_files/jquery.min.js.download"></script>
+<script type="text/javascript" charset="UTF-8" src="./IP2_Map1_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./IP2_Map1_files/util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./IP2_Map1_files/map.js.download"></script><script type="text/javascript" charset="UTF-8" src="./IP2_Map1_files/onion.js.download"></script><script type="text/javascript" charset="UTF-8" src="./IP2_Map1_files/controls.js.download"></script><script type="text/javascript" charset="UTF-8" src="./IP2_Map1_files/marker.js.download"></script></head>
+
+<body data-gr-c-s-loaded="true">
+    <div id="other">
+        <header>
+            <h1>Earthquake Mapping</h1>
+            <h3>Integrated Project 2 Starter</h3>
+            <h4>Google map with earthquake markers</h4>
+            <h4> Data from following source:
+                <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson">https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson</a>
+            </h4>
+            <h4>See all feeds at:
+                <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php</a>
+            </h4>
+        </header>
+        <button type="button" id="earthquakes">Click me</button>
+        <!-- 'info' is just for debugging use -->
+        <div id="info"></div>
+    </div>
+    <div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-err-container"><div class="gm-err-content"><div class="gm-err-icon"><img src="./IP2_Map1_files/icon_error.png" draggable="false" style="user-select: none;"></div><div class="gm-err-title">Oops! Something went wrong.</div><div class="gm-err-message">This page didn't load Google Maps correctly. See the JavaScript console for technical details.</div></div></div></div></div>
+    <script>
+        var map;
+        //initMap() called when Google Maps API code is loaded - when web page is opened/refreshed 
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 2,
+                center: new google.maps.LatLng(2.8, -187.3), // Center Map. Set this to any location that you like
+                mapTypeId: 'terrain' // can be any valid type
+            });
+        }
+
+        var thelocation;
+        var titleName;
+        $(document).ready(function () {
+
+            $('#earthquakes').click(function () {
+                // Set Google map  to its start state
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 2,
+                    center: new google.maps.LatLng(2.8, -187.3), // Center Map. Set this to any location that you like
+                    mapTypeId: 'terrain' // can be any valid type
+                });
+                // The following uses JQuery library
+                $.ajax({
+                    // The URL of the specific data required
+                    url: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+
+                    // Called if there is a problem loading the data
+                    error: function () {
+                        $('#info').html('<p>An error has occurred</p>');
+                    },
+
+                    // Called when the data has succesfully loaded
+                    success: function (data) {
+                        $.each(data.features, function (key, val) {
+                            // Get the lat and lng data for use in the markers
+                            var coords = val.geometry.coordinates;
+                            var latLng = new google.maps.LatLng(coords[1], coords[0]);
+                            // Now create a new marker on the map
+                            var marker = new google.maps.Marker({
+                                position: latLng,
+                                map: map
+                            });
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Need the following code for Google Maps. PLEASE INSERT YOUR OWN GOOGLE MAPS KEY BELOW -->
+    <script async="" defer="" src="./IP2_Map1_files/js">
+    </script>
+
+
+</body></html>
