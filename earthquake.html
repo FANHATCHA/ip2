@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <title>IP2 Project</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -17,18 +15,11 @@
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
   <style>
-      
+
       /* Set the size of the div element that contains the map */
       #map {
         height: 100%;  /* The height is 400 pixels */
@@ -36,13 +27,13 @@
         border: 1px solid rgba(0,0,0, 0.2);
         border-radius: 2px;
      }
-  
+
      .checkbox label input[type="checkbox"] + .cr > .cr-icon, .radio label input[type="radio"] + .cr > .cr-icon {
           transform: scale(3) rotateZ(-20deg);
           opacity: 0;
           transition: all .3s ease-in;
       }
-      
+
       .card-header{
           background: rgba(0,0,0,0.7);
           color: #fff;
@@ -85,9 +76,8 @@
           <div class="container">
 
             <div class="logo float-left">
-              <!-- Uncomment below if you prefer to use an image logo -->
-              <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-              <a href="#intro" class="scrollto"><img src="img/icons/logo.png" alt="" class="img-fluid"></a>
+
+              <a href="index.html" class="scrollto"><img src="img/icons/logo.png" alt="" class="img-fluid"></a>
             </div>
 
             <nav class="main-nav float-right d-none d-lg-block">
@@ -98,7 +88,7 @@
                 <li><a href="earthquake.html">Earthquake</a></li>
               </ul>
             </nav><!-- .main-nav -->
-            
+
           </div>
         </header><!-- #header -->
 
@@ -119,15 +109,10 @@
                       </div>
 
                       <div class="card-body">
-                        <!-- <span class="mb-1 d-inline-block"><b>Enter location</b></span>
-                        <div class="search-item search head-item">
-                            <select data-placeholder="Choose countries..." id="search2" class="input-element chosen-select" multiple name="search">
-                              <option value=""></option>
-                            </select>     
-                        </div> -->
+
 
                         <span class="mt-1 mb-2 pb-1 d-block" style="border-bottom: 2px solid rgba(0,0,0,0.5);"><b>PAST HOUR</b></span>
-                        
+
                         <div class="mt-1">
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" value="significant_hour" name="check" class="custom-control-input" id="customCheck1" >
@@ -150,10 +135,10 @@
                               <label class="custom-control-label" for="customCheck5">All</label>
                             </div>
                         </div>
-                        
+
                         <div class="clearfix"></div>
                         <span class="mt-2 mb-2 pb-1 d-block" style="border-bottom: 2px solid rgba(0,0,0,0.5)"><b>PAST DAY</b></span>
-                        
+
                         <div class="mt-1">
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" value="significant_day" name="check" class="custom-control-input" id="customCheck6" >
@@ -179,7 +164,7 @@
 
                         <div class="clearfix"></div>
                         <span class="mt-2 mb-2 pb-1 d-block" style="border-bottom: 2px solid rgba(0,0,0,0.5)"><b> PAST 7 DAYS</b></span>
-                        
+
                         <div class="mt-1">
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" value="significant_week" name="check" class="custom-control-input" id="customCheck11" >
@@ -205,23 +190,23 @@
 
                         <div class="clearfix"></div>
                         <span class="mt-2 mb-2 pb-1 d-block" style="border-bottom: 2px solid rgba(0,0,0,0.5)"><b>PAST 30 DAYS</b></span>
-                        
+
                         <div class="mt-1">
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" value="significant_month" name="check" class="custom-control-input" id="customCheck16" >
                               <label class="custom-control-label" for="customCheck16">Significant Earthquakes</label>
                             </div><br>
-                            
+
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" name="check" value="1.0_month" class="custom-control-input" id="customCheck17" >
                               <label class="custom-control-label" for="customCheck17">M1.0+</label>
                             </div>
-                            
+
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" name="check" value="2.5_month" class="custom-control-input" id="customCheck18" >
                               <label class="custom-control-label" for="customCheck18">M2.5+</label>
                             </div>
-                            
+
                             <div class="custom-control custom-checkbox mx-2" style="float: left">
                               <input type="checkbox" name="check" value="4.5_month" class="custom-control-input" id="customCheck19" >
                               <label class="custom-control-label" for="customCheck19">M4.5+</label>
@@ -255,29 +240,16 @@
         </div>
       </div>
     </footer><!-- #footer -->
-    <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
 
-    <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/mobile-nav/mobile-nav.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
 
     <script>
-      
+
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmvWSeWu-g_uQ7TpQBZFspA0KaTnMmdCg&callback=initMap"></script>
@@ -290,5 +262,5 @@
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmvWSeWu-g_uQ7TpQBZFspA0KaTnMmdCg&callback=initMap"></script>
 <body>
-  
+
 </html>
